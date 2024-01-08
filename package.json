@@ -20,14 +20,16 @@
     "dev": "npm run docs:dev",
     "build": "vite build && vue-tsc -p tsconfig-build.json && tsc-alias -p tsconfig-build.json",
     "preview": "vite preview",
-    "postversion": "git push && git push --tags",
+    "preversion": "npm run test",
+    "postversion": "git push && git push --tags && npm run docs:build && npm run build",
     "test": "jest",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
     "prepare": "husky install",
-    "publish:next": "npm run docs:build && npm run build && npm publish --registry=https://registry.npmjs.org/ --tag=next",
-    "publish:beta": "npm run docs:build && npm run build && npm publish --registry=https://registry.npmjs.org/ --tag=beta"
+    "publish:next": "npm publish --registry=https://registry.npmjs.org/ --tag=next",
+    "publish:beta": "npm publish --registry=https://registry.npmjs.org/ --tag=beta",
+    "publish:latest": "npm publish --registry=https://registry.npmjs.org/"
   },
   "devDependencies": {
     "@types/jest": "^29.5.1",
