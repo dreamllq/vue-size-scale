@@ -25,6 +25,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+    "allowJs": true,
     "noImplicitAny": false,
     "baseUrl": ".",
     "paths": {
@@ -34,6 +35,10 @@
         "src/*/index.vue"
       ]
     },
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "outDir": "ts-dist"
   },
   "include": [
     "src/**/*.ts",
@@ -59,5 +64,10 @@
     {
       "path": "./tsconfig.node.json"
     }
-  ]
+  ],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
 }
