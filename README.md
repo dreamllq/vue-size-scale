@@ -1,6 +1,6 @@
-# vite-vue3-ts-component-template
+# lc-vue-size-scale
 
-选择器样式组件
+尺寸刻度尺
 
 常用场景：
 
@@ -8,18 +8,53 @@
 
 ## Demo
 
-[demo](https://unpkg.com/vite-vue3-ts-component-template/docs/.vitepress/dist/index.html) 
+[demo](https://unpkg.com/lc-vue-size-scale/docs/.vitepress/dist/index.html) 
 
 ## 安装 
 
 ```
-npm i vite-vue3-ts-component-template 
+npm i lc-vue-size-scale
 ```
 
 ## 例子
 
 ```vue
+<template>
+  <div style='position: relative; height: 500px; display: flex; flex-direction: column;'>
+    <div style='height: 20px; display: flex;'>
+      <div style='width: 20px;' />
+      <div style='flex: 1; position: relative;'>
+        <px-scale />
+      </div>
+      <div style='width: 20px;' />
+    </div>
+    <div style='flex: 1;display: flex;'>
+      <div style='width: 20px; position: relative;'>
+        <px-scale placement='left' />
+      </div>
+      <div style='flex: 1; position: relative;' />
+      <div style='width: 20px; position: relative;'>
+        <px-scale placement='right' />
+      </div>
+    </div>
+    <div style='height: 20px; display: flex;'>
+      <div style='width: 20px;' />
+      <div style='flex: 1; position: relative;'>
+        <px-scale placement='bottom' />
+      </div>
+      <div style='width: 20px;' />
+    </div>
+  </div>
+</template>
 
+<script setup lang="ts">
+import { PxScale } from 'lc-vue-size-scale';
+
+</script>
+
+<style scoped>
+
+</style>
 ```
 
 ## API
