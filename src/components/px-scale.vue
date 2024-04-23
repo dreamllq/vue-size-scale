@@ -68,7 +68,7 @@ const scales = computed(() => {
 
 const scaleTexts = computed(() => {
   const step = 20;
-  const count = Math.floor(scaleCount.value / step);
+  const count = Math.floor(scaleCount.value / step) + 1;
   
   const texts:{offset: number}[] = [];
 
